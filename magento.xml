@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EndToEndFlowSuite" verbose="1" parallel="classes">
+	
+	<test name="RegistationTestOnChrome">
+		<parameter name="browserName" value="chrome" />
+		<parameter name="url" value="https://magento.softwaretestingboard.com/" />
+		<classes>
+			<class name="com.sopra.magento.tests.SignInTest" />
+			<class name="com.sopra.magento.tests.RegistrationTest" />
+		</classes>
+	</test>
+</suite>
