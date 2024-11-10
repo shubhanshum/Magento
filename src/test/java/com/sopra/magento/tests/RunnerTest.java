@@ -27,6 +27,7 @@ public class RunnerTest {
 			ChromeOptions options=new ChromeOptions();
 			options.addArguments("--ignore-ssl-errors=yes");
 			options.addArguments("--ignore-certificate-errors");
+			options.addArguments("--headless");
 			threadLocalDriver.set(new ChromeDriver(options));
 		}
 		else if (browserName.equalsIgnoreCase("Firefox")){
