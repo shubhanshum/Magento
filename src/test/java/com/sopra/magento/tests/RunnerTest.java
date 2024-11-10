@@ -20,9 +20,8 @@ public class RunnerTest {
 	protected static 
     ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 	
-	
-	@BeforeClass
 	@Parameters({ "browserName" , "url"})
+	@BeforeClass
 	public void launchBrowserAndNavigateToUrl(String browserName,String url) {
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			ChromeOptions options=new ChromeOptions();

@@ -15,6 +15,9 @@ public class LandingPage {
 	@FindBy(linkText = "Sign In")
 	WebElement signInLink;
 	
+	@FindBy(xpath="//span[text()='New Luma Yoga Collection']")
+	WebElement yogaText;
+	
 	public LandingPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
@@ -30,5 +33,9 @@ public class LandingPage {
 	
 	public boolean verifySignInLinkDisplayed() {
 		return signInLink.isDisplayed();
+	}
+	
+	public String getYogaCollectionText() {
+		return yogaText.getText().toString();
 	}
 }

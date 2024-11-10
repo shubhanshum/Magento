@@ -1,8 +1,11 @@
 package com.sopra.magento.utilities;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+
+import org.openqa.selenium.TakesScreenshot;
 
 public class Utility {
 
@@ -19,4 +22,5 @@ public class Utility {
 		}
 		return value;
 	}
+	
 }

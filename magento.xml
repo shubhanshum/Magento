@@ -1,5 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="EndToEndFlowSuite" verbose="1" parallel="classes">
+<suite name="EndToEndFlowSuite" verbose="1">
+	<listeners>
+		<listener class-name="com.sopra.magento.tests.ExtentReportManager"></listener>
+	</listeners>
 	
 	<test name="RegistationTestOnChrome">
 		<parameter name="browserName" value="chrome" />

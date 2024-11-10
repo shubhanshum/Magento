@@ -11,7 +11,7 @@ public class RegistrationTest extends RunnerTest{
 	LandingPage landingpage;
 	RegisterPage registerPage;
 	
-	@Test
+	@Test(retryAnalyzer = RetryAnalyser.class)
 	public void registrationTest() {
 		landingpage =new LandingPage(getDriver());
 		registerPage=new RegisterPage(getDriver());

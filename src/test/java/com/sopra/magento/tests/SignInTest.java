@@ -14,7 +14,7 @@ public class SignInTest extends RunnerTest{
 	SignInPage signInPage;
 	MyAccountPage myAccountPage;
 	
-	@Test
+	@Test(retryAnalyzer = RetryAnalyser.class)
 	public void signInTest() {
 		landingPage=new LandingPage(getDriver());
 		signInPage=new SignInPage(getDriver());
