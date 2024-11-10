@@ -2,6 +2,8 @@ package com.sopra.magento.tests;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -23,9 +25,10 @@ public class ExtentReportManager extends RunnerTest implements ITestListener{
 	ExtentReports extent;
 	ExtentTest test;
 	
+	String timestamp=new SimpleDateFormat("dd.MM.yyyy.ss").format(new Date());
 	@Override
 	public void onStart(ITestContext context) {
-		sparkReporter=new ExtentSparkReporter(System.getProperty("user.dir")+"\\Reports\\report.html");
+		sparkReporter=new ExtentSparkReporter(System.getProperty("user.dir")+"\\Reports\\"+timestamp+".html");
 		sparkReporter.config().setDocumentTitle("Magento Automation Report");
 		sparkReporter.config().setReportName("Automation Tests");
 		sparkReporter.config().setTheme(Theme.STANDARD);
@@ -49,8 +52,13 @@ public class ExtentReportManager extends RunnerTest implements ITestListener{
 		test.log(Status.FAIL, "Test case failed is - "+result.getName());
 		test.log(Status.FAIL, "Test case failed cause is - "+result.getThrowable());
 		File srcFile=((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
-		//FileUtils.copyFile(srcFile, new File(System.getProperty("user.dir"))+"\\Screenshots\\title.png");
-		
+		File destFile=new File (System.getProperty("user.dir")+"\\Screenshots\\"+result.getName()+timestamp+".png");
+		try {
+			FileHandler.copy(srcFile, destFile);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		test.addScreenCaptureFromPath(System.getProperty("user.dir")+"\\Screenshots\\"+result.getName()+".png");
 		
 	}
 	
