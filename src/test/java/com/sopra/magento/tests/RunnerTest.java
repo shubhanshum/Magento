@@ -23,7 +23,8 @@ public class RunnerTest {
 	@Parameters({ "url"})
 	@BeforeClass
 	public void launchBrowserAndNavigateToUrl(String browserName,String url) {
-		if (browserName.equalsIgnoreCase(System.getProperty("browserName"))) {
+		browserName= System.getProperty("browserName");
+		if (browserName.equalsIgnoreCase(browserName)) {
 			ChromeOptions options=new ChromeOptions();
 			options.addArguments("--ignore-ssl-errors=yes");
 			options.addArguments("--ignore-certificate-errors");
