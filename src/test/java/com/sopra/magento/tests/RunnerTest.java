@@ -20,14 +20,14 @@ public class RunnerTest {
 	protected static 
     ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 	
-	@Parameters({ "browserName" , "url"})
+	@Parameters({ "url"})
 	@BeforeClass
 	public void launchBrowserAndNavigateToUrl(String browserName,String url) {
-		if (browserName.equalsIgnoreCase("Chrome")) {
+		if (browserName.equalsIgnoreCase(System.getProperty("browserName"))) {
 			ChromeOptions options=new ChromeOptions();
 			options.addArguments("--ignore-ssl-errors=yes");
 			options.addArguments("--ignore-certificate-errors");
-			options.addArguments("--headless");
+			//options.addArguments("--headless");
 			threadLocalDriver.set(new ChromeDriver(options));
 		}
 		else if (browserName.equalsIgnoreCase("Firefox")){

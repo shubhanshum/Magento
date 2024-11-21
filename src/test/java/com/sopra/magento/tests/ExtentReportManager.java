@@ -26,6 +26,7 @@ public class ExtentReportManager extends RunnerTest implements ITestListener{
 	ExtentTest test;
 	
 	String timestamp=new SimpleDateFormat("dd.MM.yyyy.ss").format(new Date());
+	
 	@Override
 	public void onStart(ITestContext context) {
 		sparkReporter=new ExtentSparkReporter(System.getProperty("user.dir")+"\\Reports\\"+timestamp+".html");

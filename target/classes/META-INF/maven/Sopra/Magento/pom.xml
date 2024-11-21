@@ -30,6 +30,13 @@
     <artifactId>testng</artifactId>
     <version>7.9.0</version>
 </dependency>
+<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+<dependency>
+    <groupId>io.appium</groupId>
+    <artifactId>java-client</artifactId>
+    <version>9.3.0</version>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
 <dependency>
     <groupId>io.rest-assured</groupId>
@@ -81,6 +88,9 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.3.0</version>
           <configuration>
+			  <systemPropertyVariables>
+				  <browserName>${browserName}</browserName>
+			  </systemPropertyVariables>
 					<suiteXmlFiles>
 						<suiteXmlFile>magento.xml</suiteXmlFile>
 					</suiteXmlFiles>

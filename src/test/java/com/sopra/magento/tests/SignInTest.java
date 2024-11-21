@@ -1,5 +1,7 @@
 package com.sopra.magento.tests;
 
+import java.util.Base64;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
