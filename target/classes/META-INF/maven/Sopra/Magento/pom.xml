@@ -89,7 +89,7 @@
           <version>3.3.0</version>
           <configuration>
 			  <systemPropertyVariables>
-				  <browserName>${browserName}</browserName>
+				  <urlValue>${url}</urlValue>
 			  </systemPropertyVariables>
 					<suiteXmlFiles>
 						<suiteXmlFile>magento.xml</suiteXmlFile>

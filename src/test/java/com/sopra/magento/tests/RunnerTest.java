@@ -20,10 +20,9 @@ public class RunnerTest {
 	protected static 
     ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 	
-	@Parameters({ "url"})
+	@Parameters({ "browserName"})
 	@BeforeClass
-	public void launchBrowserAndNavigateToUrl(String browserName,String url) {
-		browserName= System.getProperty("browserName");
+	public void launchBrowserAndNavigateToUrl(String browserName) {
 		if (browserName.equalsIgnoreCase(browserName)) {
 			ChromeOptions options=new ChromeOptions();
 			options.addArguments("--ignore-ssl-errors=yes");
@@ -41,7 +40,7 @@ public class RunnerTest {
 			System.out.println("Browser not defined");
 		}
 		getDriver().manage().window().maximize();
-		getDriver().get(url);
+		getDriver().get(System.getProperty("url"));
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
 	
