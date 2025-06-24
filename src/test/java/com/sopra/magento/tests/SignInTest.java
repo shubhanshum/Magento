@@ -22,6 +22,7 @@ public class SignInTest extends RunnerTest{
 		signInPage=new SignInPage(getDriver());
 		myAccountPage=new MyAccountPage(getDriver());
 		landingPage.clickSignIn();
+		System.out.println("I clicked");
 		signInPage.login(Utility.getPropFileData("Email"), Utility.getPropFileData("Pwd"));
 		Assert.assertTrue(myAccountPage.verifyMyAccountTextDisplayed());
 		
