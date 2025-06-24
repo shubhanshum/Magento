@@ -23,15 +23,7 @@ public class RunnerTest {
 	@Parameters({ "browserName"})
 	@BeforeClass
 	public void launchBrowserAndNavigateToUrl(String browserName) {
-		if (browserName.equalsIgnoreCase(browserName)) {
-			ChromeOptions options=new ChromeOptions();
-			options.addArguments("--ignore-ssl-errors=yes");
-			options.addArguments("--ignore-certificate-errors");
-			options.addArguments("--headless");
-			threadLocalDriver.set(new ChromeDriver(options));
-			System.out.println("Chrome launched");
-		}
-		else if (browserName.equalsIgnoreCase("Firefox")){
+		 if (browserName.equalsIgnoreCase("Firefox")){
 			FirefoxOptions options=new FirefoxOptions();
 			options.addArguments("--ignore-ssl-errors=yes");
 			options.addArguments("--ignore-certificate-errors");
@@ -43,7 +35,7 @@ public class RunnerTest {
 			System.out.println("Browser not defined");
 		}
 		getDriver().manage().window().maximize();
-		System.out.println("URL is:"+System.getProperty("url"));
+		System.out.println("Shubhanshu URL is:"+System.getProperty("url"));
 		getDriver().get(System.getProperty("url"));
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
