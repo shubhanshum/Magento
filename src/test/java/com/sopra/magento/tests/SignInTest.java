@@ -17,6 +17,7 @@ public class SignInTest extends RunnerTest{
 	MyAccountPage myAccountPage;
 	
 	@Test
+	public void signintest() {
 		landingPage=new LandingPage(getDriver());
 		signInPage=new SignInPage(getDriver());
 		myAccountPage=new MyAccountPage(getDriver());
