@@ -5,7 +5,7 @@
 	</listeners>
 	
 	<test name="RegistationTestOnChrome">
-		<parameter name="browserName" value="Chrome" />
+		<parameter name="browserName" value="Firefox" />
 		<classes>
 			<class name="com.sopra.magento.tests.SignInTest" />
 		</classes>
