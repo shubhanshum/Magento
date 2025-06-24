@@ -27,19 +27,23 @@ public class RunnerTest {
 			ChromeOptions options=new ChromeOptions();
 			options.addArguments("--ignore-ssl-errors=yes");
 			options.addArguments("--ignore-certificate-errors");
-			//options.addArguments("--headless");
+			options.addArguments("--headless");
 			threadLocalDriver.set(new ChromeDriver(options));
+			System.out.println("Chrome launched");
 		}
 		else if (browserName.equalsIgnoreCase("Firefox")){
 			FirefoxOptions options=new FirefoxOptions();
 			options.addArguments("--ignore-ssl-errors=yes");
 			options.addArguments("--ignore-certificate-errors");
+			options.addArguments("--headless");
 			threadLocalDriver.set(new FirefoxDriver(options));
+			System.out.println("Firefox launched");
 		}
 		else {
 			System.out.println("Browser not defined");
 		}
 		getDriver().manage().window().maximize();
+		System.out.println("URL is:"+System.getProperty("url"));
 		getDriver().get(System.getProperty("url"));
 		getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 	}
