@@ -27,7 +27,7 @@ public class RunnerTest {
 			FirefoxOptions options=new FirefoxOptions();
 			options.addArguments("--ignore-ssl-errors=yes");
 			options.addArguments("--ignore-certificate-errors");
-			options.addArguments("--headless");
+			//options.addArguments("--headless");
 			threadLocalDriver.set(new FirefoxDriver(options));
 			System.out.println("Firefox launched");
 		}
