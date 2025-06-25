@@ -91,6 +91,9 @@
 			  <systemPropertyVariables>
 				  <urlValue>${url}</urlValue>
 			  </systemPropertyVariables>
+		  <systemPropertyVariables>
+				  <emailValue>${email}</emailValue>
+			  </systemPropertyVariables>
 					<suiteXmlFiles>
 						<suiteXmlFile>magento.xml</suiteXmlFile>
 					</suiteXmlFiles>
