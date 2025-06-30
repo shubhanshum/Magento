@@ -88,12 +88,7 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>3.3.0</version>
           <configuration>
-			  <systemPropertyVariables>
-				  <urlValue>${url}</urlValue>
-			  </systemPropertyVariables>
-		  <systemPropertyVariables>
-				  <emailValue>${email}</emailValue>
-			  </systemPropertyVariables>
+			 
 					<suiteXmlFiles>
 						<suiteXmlFile>magento.xml</suiteXmlFile>
 					</suiteXmlFiles>
